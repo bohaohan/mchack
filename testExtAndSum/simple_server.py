@@ -1,4 +1,4 @@
-from pandas import json
+import json
 
 __author__ = 'bohaohan'
 from flask import Flask
