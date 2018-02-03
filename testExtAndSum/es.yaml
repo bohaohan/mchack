@@ -9,3 +9,9 @@ handlers:
 - url: /get_sum
   script: simple_server.app
 
+libraries:
+- name: flask
+  version: 0.12
+
+
+
