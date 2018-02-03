@@ -1,0 +1,11 @@
+runtime: python27
+api_version: 1
+threadsafe: true
+
+handlers:
+- url: /
+  script: simple_server.app
+
+- url: /get_sum
+  script: simple_server.app
+
