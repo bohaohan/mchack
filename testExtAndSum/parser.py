@@ -108,33 +108,6 @@ def fix_broken_sentences(sentences):
     return new_list
 
 
-def convert_abbreviations_(string):
-    # Remove all periods in all multi period abbreviations. Example: Y.M.C.A -> YMCA
-    file = open("word_lists/abbreviations_multi.txt")
-    abbreviations = str(file.read()).split("\n")
-    file.close()
-    new_string = string
-    abbreviations_in_string = []
-
-    # Get all the abbreviations that are in the string.
-    for abbreviation in abbreviations:
-        if abbreviation in string:
-            abbreviations_in_string.append(abbreviation)
-
-    # Sort the abbreviations from longest to shortest.
-    # Some abbreviations overlap so its important to check the longest ones first.
-    # Example: "Y.M.C.A." contains "M.C." and "C.A." and "Y.M.C.A". If the "C.A."
-    # is handled first then it becomes "Y.M.CA", which is incorrect.
-    abbreviations_in_string.sort(key=str.__len__)
-    abbreviations_in_string.reverse()
-
-    for abbreviation in abbreviations_in_string:
-        if abbreviation in new_string:
-            # new_string = str(new_string.encode('utf-8')).replace(abbreviation, abbreviation.replace(".", ""))
-            new_string = str(new_string).replace(abbreviation, abbreviation.replace(".", ""))
-    return new_string
-
-
 def clean(word):
     # Remove punctuation from a word and convert it to lowercase singular.
     new_word = remove_punctuation(word)
