@@ -1,7 +1,9 @@
 # The highest level code that brings everything together.
 
-import filter, scoring, extractor
-
+# import filter, scoring, extractor
+from filter import *
+from scoring import *
+from extractor import *
 
 def print_usage():
     # Display the parameters and what they mean.
@@ -20,23 +22,23 @@ def summarize(str_, num_of_sentences):
     # file = filename
 
     # Extract all the words and sentences and get their respective scores.
-    all_words = extractor.get_words_(str_)
-    word_scores = scoring.get_word_scores(all_words)
-    all_sentences = extractor.get_sentences_(str_)
-    all_sentences = filter.omit_transition_sentences(all_sentences)
-    sentence_scores = scoring.get_sentence_scores_list(all_sentences, word_scores)
+    all_words = get_words_(str_)
+    word_scores = get_word_scores(all_words)
+    all_sentences = get_sentences_(str_)
+    all_sentences = omit_transition_sentences(all_sentences)
+    sentence_scores = get_sentence_scores_list(all_sentences, word_scores)
 
     if num_of_sentences > len(all_sentences):
         print("The summary cannot be longer than the text.")
         return
 
     # Get x sentences with the highest scores, in chronological order.
-    threshold = scoring.x_highest_score(sentence_scores, num_of_sentences)
-    top_sentences = scoring.top_sentences(all_sentences, sentence_scores, threshold)
+    threshold = x_highest_score(sentence_scores, num_of_sentences)
+    top_sentence = top_sentences(all_sentences, sentence_scores, threshold)
 
     # Put the top sentences into one string.
     summary = ""
-    for sentence in top_sentences:
+    for sentence in top_sentence:
         summary += sentence + " "
     summary = summary[:-1]
     print(summary)
