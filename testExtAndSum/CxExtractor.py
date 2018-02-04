@@ -1,6 +1,6 @@
 # coding=utf-8
 import re
-import chardet
+# import chardet
 
 # import requests
 import urllib2
@@ -84,10 +84,9 @@ class CxExtractor:
         # response = requests.get(url)
         response = urllib2.urlopen(url)
         html = response.read()
-        encode_info = chardet.detect(response.read())
+        # encode_info = chardet.detect(response.read())
         # encode_info = chardet.detect(response.content)
         # if encode_info['encoding'] is not None:
-            # html = html.decode(encode_info['encoding'])
         return html
 
     def readHtml(self, path, coding):
