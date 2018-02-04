@@ -2,7 +2,7 @@
 import re
 import chardet
 
-import urllib2
+import requests
 
 
 class CxExtractor:
@@ -81,8 +81,8 @@ class CxExtractor:
         return htmlstr
 
     def getHtml(self, url):
-        response = urllib2.urlopen(url)
-        encode_info = chardet.detect(response.read())
+        response = requests.get(url)
+        encode_info = chardet.detect(response.content)
         response.encoding = encode_info['encoding']
         return response.text
 

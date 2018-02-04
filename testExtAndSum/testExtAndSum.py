@@ -6,6 +6,7 @@ from main_ import *
 def testExtAndSum(url):
     cx = CxExtractor(threshold=186)
     html = cx.getHtml(url)
+    # print html
     pattern = "<title.*?>(.+?)</title>"
     titles = re.findall(pattern, html)
     print "titles", titles
@@ -17,4 +18,6 @@ def testExtAndSum(url):
 
 if __name__ == '__main__':
     url = "https://www.theguardian.com/football/2018/feb/03/manchester-united-huddersfield-town-premier-league-match-report"
-    testExtAndSum(url)
+    # testExtAndSum(url)
+    sum_, title = testExtAndSum(url)
+    print sum_, title
