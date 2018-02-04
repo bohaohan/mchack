@@ -3,11 +3,9 @@ api_version: 1
 threadsafe: true
 
 handlers:
-- url: /
-  script: simple_server.app
+- url: /.*
+  script: main.app
 
-- url: /get_sum
-  script: simple_server.app
 
 libraries:
 - name: flask

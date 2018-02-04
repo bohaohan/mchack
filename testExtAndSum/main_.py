@@ -1,9 +1,6 @@
 # The highest level code that brings everything together.
 
-import extractor
-import filter
-import scoring
-from sys import argv
+import filter, scoring, extractor
 
 
 def print_usage():

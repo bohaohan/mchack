@@ -1,8 +1,8 @@
 # Tool to count and score sentences and words.
+from sys import argv
 
 import parser
 import extractor
-from sys import argv
 
 
 def get_word_scores(all_words):

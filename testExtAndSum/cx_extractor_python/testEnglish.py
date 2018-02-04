@@ -1,5 +1,7 @@
 import os
-from CxExtractor import CxExtractor
+
+from hackthon.mchack.testExtAndSum import CxExtractor
+
 files = os.listdir('./bbcnews-html')
 cx = CxExtractor(threshold=186)
 for f in files:

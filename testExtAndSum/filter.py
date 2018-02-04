@@ -7,8 +7,9 @@
 # Example: "Cats like to play. They also like to eat". The second sentence here refers to the first.
 # Therefore it should be omitted.
 
-import extractor
 from sys import argv
+
+import extractor
 
 
 def print_usage():

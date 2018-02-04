@@ -1,6 +1,7 @@
 # Tool to extract sentences & words from a file.
 
 from sys import argv
+
 import parser
 
 

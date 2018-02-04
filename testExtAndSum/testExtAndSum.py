@@ -1,6 +1,6 @@
 __author__ = 'bohaohan'
-from cx_extractor_python.CxExtractor import *
-from Article_Summarizer.main import *
+from CxExtractor import *
+from main_ import *
 
 
 def testExtAndSum(url, cx=CxExtractor(threshold=186)):

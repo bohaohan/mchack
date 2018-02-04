@@ -4,6 +4,8 @@ __author__ = 'bohaohan'
 from flask import Flask
 from flask import request
 from testExtAndSum import *
+from CxExtractor import *
+
 app = Flask(__name__)
 cx=CxExtractor(threshold=100)
 
