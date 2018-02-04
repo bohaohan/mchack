@@ -4,7 +4,7 @@ __author__ = 'bohaohan'
 from flask import Flask
 from flask import request
 from testExtAndSum import *
-from CxExtractor import *
+
 
 app = Flask(__name__)
 
@@ -29,4 +29,5 @@ def extract():
 
 if __name__ == '__main__':
     # app.run()
-    app.run(host='0.0.0.0', port=2333)
+    app.run(host='0.0.0.0', port=23334)
+
