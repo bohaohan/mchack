@@ -4,6 +4,7 @@ url = "http://0.0.0.0:23334/get_sum"
 # url = "https://datacleanandsum.appspot.com/get_sum"
 data = {
   "url": "https://www.theguardian.com/football/2018/feb/03/manchester-united-huddersfield-town-premier-league-match-report"
+    # "url": "https://datacleanandsum.appspot.com/"
   }
 r = requests.post(url, data=data)
 print r.text

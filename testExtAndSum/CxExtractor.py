@@ -2,8 +2,8 @@
 import re
 import chardet
 
-import requests
-
+# import requests
+import urllib2
 
 class CxExtractor:
     """cx-extractor implemented in Python"""
@@ -81,10 +81,14 @@ class CxExtractor:
         return htmlstr
 
     def getHtml(self, url):
-        response = requests.get(url)
-        encode_info = chardet.detect(response.content)
-        response.encoding = encode_info['encoding']
-        return response.text
+        # response = requests.get(url)
+        response = urllib2.urlopen(url)
+        html = response.read()
+        encode_info = chardet.detect(response.read())
+        # encode_info = chardet.detect(response.content)
+        # if encode_info['encoding'] is not None:
+            # html = html.decode(encode_info['encoding'])
+        return html
 
     def readHtml(self, path, coding):
         page = open(path, encoding=coding)

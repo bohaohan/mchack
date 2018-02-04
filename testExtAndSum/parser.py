@@ -130,7 +130,8 @@ def convert_abbreviations(string):
 
     for abbreviation in abbreviations_in_string:
         if abbreviation in new_string:
-            new_string = str(new_string.encode('utf-8')).replace(abbreviation, abbreviation.replace(".", ""))
+            # new_string = str(new_string.encode('utf-8')).replace(abbreviation, abbreviation.replace(".", ""))
+            new_string = str(new_string).replace(abbreviation, abbreviation.replace(".", ""))
     return new_string
 
 

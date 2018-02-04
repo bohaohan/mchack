@@ -14,7 +14,8 @@ def testExtAndSum(url):
     content = cx.filter_tags(html)
     s = cx.getText(content)
     sum_ = summarize(s, 3)
-    kws = keyword_analysis(sum_)
+    # kws = keyword_analysis(sum_)
+    kws = []
     return sum_, titles[0], kws
 
 
