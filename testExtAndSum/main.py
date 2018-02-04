@@ -7,7 +7,6 @@ from testExtAndSum import *
 from CxExtractor import *
 
 app = Flask(__name__)
-cx=CxExtractor(threshold=100)
 
 @app.route('/')
 def hello_world():
@@ -18,7 +17,7 @@ def hello_world():
 def extract():
     url = request.form['url']
     print url
-    sum_, title = testExtAndSum(url, cx)
+    sum_, title = testExtAndSum(url)
     result = {
         "url": url,
         "summary": sum_,
