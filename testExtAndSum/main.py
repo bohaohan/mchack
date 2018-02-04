@@ -28,19 +28,6 @@ def extract():
     return json.dumps(result)
 
 
-@app.route('/test_kw', methods=['POST'])
-def test_kw():
-    sum_ = request.form['summary']
-    print sum_
-    kws = keyword_analysis(sum_)
-    result = {
-        "keyword": kws
-
-    }
-    return json.dumps(result)
-
-
-
 
 if __name__ == '__main__':
     # app.run()
