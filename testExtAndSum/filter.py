@@ -9,8 +9,8 @@
 
 from sys import argv
 
-import extractor
-
+# import extractor
+from extractor import *
 
 def print_usage():
     # Display the parameters and what they mean.
@@ -49,7 +49,7 @@ def omit_transition_sentences(sentences):
 if __name__ == "__main__":
     if len(argv) == 2:
         transition_phrases = get_transition_phrases()
-        sentences = extractor.get_sentences(argv[1])
+        sentences = get_sentences(argv[1])
         count = 0
         for sentence in sentences:
             for phrase in transition_phrases:

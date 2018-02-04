@@ -2,8 +2,8 @@
 
 from sys import argv
 
-import parser
-
+# import parser
+from parser import *
 
 def get_sentences(file_name):
     # Extract sentences from a text file.
@@ -11,17 +11,17 @@ def get_sentences(file_name):
     sentences = reader.read()
     reader.close()
     sentences = sentences.replace("\n", "")
-    sentences = parser.convert_abbreviations(sentences)
+    sentences = convert_abbreviations(sentences)
     sentences = sentences.replace("?", ".")
     sentences = sentences.replace("!", ".")
     sentences = sentences.split(".")
-    sentences = parser.fix_broken_sentences(sentences)
-    sentences = parser.remove_whitespace_list(sentences)
-    sentences = parser.remove_blanks(sentences)
-    sentences = parser.add_periods(sentences)
-    sentences = parser.clean_up_quotes(sentences)
-    sentences = parser.group_quotes(sentences)
-    sentences = parser.comma_handler(sentences)
+    sentences = fix_broken_sentences(sentences)
+    sentences = remove_whitespace_list(sentences)
+    sentences = remove_blanks(sentences)
+    sentences = add_periods(sentences)
+    sentences = clean_up_quotes(sentences)
+    sentences = group_quotes(sentences)
+    sentences = comma_handler(sentences)
     return sentences
 
 
@@ -32,11 +32,11 @@ def get_words(file_name):
     words = reader.read()
     reader.close()
     words = words.replace("\n", " ")
-    words = parser.convert_abbreviations(words)
+    words = convert_abbreviations(words)
     words = words.split(" ")
-    words = parser.remove_blanks(words)
+    words = remove_blanks(words)
     for i in range(0, len(words)):
-        words[i] = parser.clean(words[i])
+        words[i] = clean(words[i])
     return words
 
 
@@ -46,17 +46,17 @@ def get_sentences_(str_):
     sentences = str_
     # reader.close()
     sentences = sentences.replace("\n", "")
-    sentences = parser.convert_abbreviations(sentences)
+    sentences = convert_abbreviations(sentences)
     sentences = sentences.replace("?", ".")
     sentences = sentences.replace("!", ".")
     sentences = sentences.split(".")
-    sentences = parser.fix_broken_sentences(sentences)
-    sentences = parser.remove_whitespace_list(sentences)
-    sentences = parser.remove_blanks(sentences)
-    sentences = parser.add_periods(sentences)
-    sentences = parser.clean_up_quotes(sentences)
-    sentences = parser.group_quotes(sentences)
-    sentences = parser.comma_handler(sentences)
+    sentences = fix_broken_sentences(sentences)
+    sentences = remove_whitespace_list(sentences)
+    sentences = remove_blanks(sentences)
+    sentences = add_periods(sentences)
+    sentences = clean_up_quotes(sentences)
+    sentences = group_quotes(sentences)
+    sentences = comma_handler(sentences)
     return sentences
 
 
@@ -67,11 +67,11 @@ def get_words_(str_):
     words = str_
     # reader.close()
     words = words.replace("\n", " ")
-    words = parser.convert_abbreviations(words)
+    words = convert_abbreviations(words)
     words = words.split(" ")
-    words = parser.remove_blanks(words)
+    words = remove_blanks(words)
     for i in range(0, len(words)):
-        words[i] = parser.clean(words[i])
+        words[i] = clean(words[i])
     return words
 
 

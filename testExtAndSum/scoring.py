@@ -1,9 +1,10 @@
 # Tool to count and score sentences and words.
 from sys import argv
 
-import parser
-import extractor
-
+# import parser
+# import extractor
+from parser import *
+from extractor import *
 
 def get_word_scores(all_words):
     # Return a dictionary where the key is the word and the value is its count.
@@ -32,7 +33,7 @@ def score(sentence, word_scores):
             continue
         if sentence.count(word) == 1:
             denominator += 1.0
-        word = parser.clean(word)
+        word = clean(word)
         score += word_scores.get(word)
     return score/denominator
 
@@ -119,9 +120,9 @@ def handle_arguments():
         print_usage()
         return
 
-    words = extractor.get_words(file)
+    words = get_words(file)
     words_scores = get_word_scores(words)
-    sentences = extractor.get_sentences(file)
+    sentences = get_sentences(file)
     sentences_scores = get_sentence_scores_dict(sentences, words_scores)
 
     if parameter == '-s':
