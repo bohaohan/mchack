@@ -11,7 +11,7 @@ def get_sentences(file_name):
     sentences = reader.read()
     reader.close()
     sentences = sentences.replace("\n", "")
-    sentences = convert_abbreviations(sentences)
+    sentences = convert_abbreviations_(sentences)
     sentences = sentences.replace("?", ".")
     sentences = sentences.replace("!", ".")
     sentences = sentences.split(".")
@@ -32,7 +32,7 @@ def get_words(file_name):
     words = reader.read()
     reader.close()
     words = words.replace("\n", " ")
-    words = convert_abbreviations(words)
+    words = convert_abbreviations_(words)
     words = words.split(" ")
     words = remove_blanks(words)
     for i in range(0, len(words)):
@@ -46,7 +46,7 @@ def get_sentences_(str_):
     sentences = str_
     # reader.close()
     sentences = sentences.replace("\n", "")
-    sentences = convert_abbreviations(sentences)
+    sentences = convert_abbreviations_(sentences)
     sentences = sentences.replace("?", ".")
     sentences = sentences.replace("!", ".")
     sentences = sentences.split(".")
@@ -67,7 +67,7 @@ def get_words_(str_):
     words = str_
     # reader.close()
     words = words.replace("\n", " ")
-    words = convert_abbreviations(words)
+    words = convert_abbreviations_(words)
     words = words.split(" ")
     words = remove_blanks(words)
     for i in range(0, len(words)):

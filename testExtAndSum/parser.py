@@ -108,7 +108,7 @@ def fix_broken_sentences(sentences):
     return new_list
 
 
-def convert_abbreviations(string):
+def convert_abbreviations_(string):
     # Remove all periods in all multi period abbreviations. Example: Y.M.C.A -> YMCA
     file = open("word_lists/abbreviations_multi.txt")
     abbreviations = str(file.read()).split("\n")
