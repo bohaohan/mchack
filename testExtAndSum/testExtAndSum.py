@@ -1,7 +1,7 @@
 __author__ = 'bohaohan'
 from CxExtractor import *
 from main_ import *
-# from keywordextractor import *
+from keywordextractor import *
 
 
 def testExtAndSum(url):
